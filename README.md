@@ -1,8 +1,8 @@
 # Lighting Client
 
-**Lighting Client** is a browser-based Minecraft 1.8 client built on the EaglercraftX codebase. This repository contains the Gradle workspace and build targets for the JavaScript and experimental WebAssembly GC runtimes.
+**Lighting Client** is a browser-based Minecraft 1.8 client built on an open-source browser Minecraft codebase. This repository contains the Gradle workspace and build targets for the JavaScript and experimental WebAssembly GC runtimes.
 
-> Technical note: Eaglercraft/EaglercraftX names used in package identifiers, APIs, protocols, file formats, and upstream notices are retained where they are required for compatibility or attribution. The public-facing project name is Lighting Client.
+> Technical note: Internal compatibility identifiers and required upstream attribution notices are retained. The public-facing project name is Lighting Client.
 
 ## Build requirements
 
@@ -23,4 +23,4 @@ Run `StartDesktopRuntime` in `target_lwjgl_desktop`, or the `eaglercraftDebugRun
 
 ## Upstream project
 
-Lighting Client is based on the open-source EaglercraftX 1.8 project. See [EAGLERCRAFTX_README.md](EAGLERCRAFTX_README.md) for the upstream technical background and feature documentation. Preserve applicable upstream notices and licenses when redistributing.
+Lighting Client is based on an open-source Minecraft 1.8 browser client. See [LIGHTING_CLIENT_TECHNICAL_README.md](LIGHTING_CLIENT_TECHNICAL_README.md) for technical background and feature documentation. Preserve applicable upstream notices and licenses when redistributing.
