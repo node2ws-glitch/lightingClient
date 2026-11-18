@@ -78,19 +78,19 @@ Lighting Client 1.8 includes an integrated voice-chat service that can be used i
 
 ## Resource Packs
 
-Lighting Client 1.8 allows you to use any vanilla Minecraft 1.8 resource pack in your browser by importing it as a zip file, resource packs are saved to your browser's local storage and are saved between page refreshes. This can be used to add the original C418 soundtrack back into the game, download and import [this pack](https://bafybeiayojww5jfyzvlmtuk7l5ufkt7nlfto7mhwmzf2vs4bvsjd5ouiuq.ipfs.nftstorage.link/?filename=Music_For_Eaglercraft.zip) to add music back to Lighting Client. A known bug with the debug desktop runtime is that sound files in resource packs do not play, this may be fixed in the future but is not a high priority issue.
+Lighting Client 1.8 allows you to use any vanilla Minecraft 1.8 resource pack in your browser by importing it as a zip file, resource packs are saved to your browser's local storage and are saved between page refreshes. This can be used to add the original C418 soundtrack back into the game, download and import a compatible music resource pack to add music back to Lighting Client. A known bug with the debug desktop runtime is that sound files in resource packs do not play, this may be fixed in the future but is not a high priority issue.
 
 If you are creating a resource pack and want to disable the blur filter on the main menu panorama, create a file called `assets/minecraft/textures/gui/title/background/enable_blur.txt` in your pack and set it's contents to `enable_blur=0`
 
 ## Making a Server
 
-To make a server for Lighting Client 1.8 the recommended software to use is EaglercraftXServer ("EaglerXServer"), which you can get from lax1dude here: [https://lax1dude.net/eaglerxserver/](https://lax1dude.net/eaglerxserver/)
+To make a server for Lighting Client 1.8 the recommended software to use is [EaglerXServer](https://lax1dude.net/eaglerxserver/), which you can get from lax1dude here: [https://lax1dude.net/eaglerxserver/](https://lax1dude.net/eaglerxserver/)
 
 ## Launch Options
 
 The Lighting Client 1.8 client is configured primarily through a variable called `window.eaglercraftXOpts` that must be set before the client starts up.
 
-The default eaglercraftXOpts values is this:
+The default client options are:
 
     const relayId = Math.floor(Math.random() * 3);
     window.eaglercraftXOpts = {
@@ -172,7 +172,7 @@ The default eaglercraftXOpts values is this:
 
 ### Using Hooks
 
-You may want to implement some custom logic for loading/saving certain local storage keys. The eaglercraftXOpts hooks section can be used to override the client's local storage load and save functions. Currently, local storage keys are used to save game settings, the user's profile, custom servers, and shared world relays. Worlds and resource packs do not use local storage keys because modern browsers limit local storage keys to only 5 megabytes per domain which is too small for saving entire worlds and resource packs. Worlds and resource packs are saved using [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API).
+You may want to implement some custom logic for loading/saving certain local storage keys. The client options hooks section can be used to override the client's local storage load and save functions. Currently, local storage keys are used to save game settings, the user's profile, custom servers, and shared world relays. Worlds and resource packs do not use local storage keys because modern browsers limit local storage keys to only 5 megabytes per domain which is too small for saving entire worlds and resource packs. Worlds and resource packs are saved using [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API).
 
     window.eaglercraftXOpts = {
         ...
