@@ -37,7 +37,7 @@ public class MainMenuCreditsDialog extends JFrame {
 	 */
 	public MainMenuCreditsDialog() {
 		setIconImage(Toolkit.getDefaultToolkit().getImage("icon32.png"));
-		setTitle("EaglercraftX 1.8 Credits");
+		setTitle("Lighting Client Credits");
 		setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 		setBounds(100, 100, 850, 700);
 		setLocationByPlatform(true);
