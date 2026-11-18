@@ -1,11 +1,11 @@
 
-# EaglercraftX 1.8
+# Lighting Client — Technical Background
 
 ### Play Minecraft 1.8 in your browser, supports singleplayer and multiplayer
 
-![EaglercraftX 1.8 Screenshot Main Menu](https://deev.is/eagler/cors/eagler-1.8-u22-titlescreen-480p.png)
+![Lighting Client Main Menu](https://deev.is/eagler/cors/eagler-1.8-u22-titlescreen-480p.png)
 
-### This upstream technical documentation describes the EaglercraftX 1.8 base used by Lighting Client. Original technical identifiers and upstream project references are retained for compatibility and attribution.\n\nThis repository contains:
+### This document describes the technical foundation and features used by Lighting Client. Internal identifiers and required upstream attribution are retained for compatibility and licensing.\n\nThis repository contains:
 
  - **Utilities to decompile Minecraft 1.8 and apply patch files to it**
  - **Source code to provide the LWJGL keyboard, mouse, and OpenGL APIs in a browser**
@@ -44,19 +44,19 @@
 
 ## Browser Compatibility
 
-The JavaScript runtime of EaglercraftX 1.8 is currently known to work on browsers as old as Chrome 38 on Windows XP, the game supports both WebGL 1.0 and WebGL 2.0 however features such as dynamic lighting and PBR shaders require WebGL 2.0. The game also supports mobile browsers that don't have a keyboard or mouse, the game will enter touch screen mode automatically when touch input is detected. The game also includes an embedded OGG codec (JOrbis) for loading audio files on iOS where the browsers don't support loading OGG files in an AudioContext.
+The JavaScript runtime of Lighting Client 1.8 is currently known to work on browsers as old as Chrome 38 on Windows XP, the game supports both WebGL 1.0 and WebGL 2.0 however features such as dynamic lighting and PBR shaders require WebGL 2.0. The game also supports mobile browsers that don't have a keyboard or mouse, the game will enter touch screen mode automatically when touch input is detected. The game also includes an embedded OGG codec (JOrbis) for loading audio files on iOS where the browsers don't support loading OGG files in an AudioContext.
 
 ## WebAssembly GC Support
 
-EaglercraftX 1.8 also has an experimental WebAssembly GC (WASM-GC) runtime, almost all of the features supported on the JavaScript runtime are also supported on the WebAssembly GC runtime, however it is still incompatible with several major browsers (especially Safari) and will not run in Chrome unless you can access the `chrome://flags` menu or request an origin trial token from Google for your website. Its based on experimental technology and may still crash sometimes, mostly due to browser bugs. Hopefully in the coming months the required feature (JSPI, WebAssembly JavaScript Promise Integration) will become enabled by default on the Chrome browser. It performs significantly better than the JavaScript client, around 50% more FPS and TPS in some cases, and will hopefully replace it someday. Just make sure you enable VSync when you play it, otherwise the game will run "too fast" and choke the browser's event loop, causing input lag.
+Lighting Client 1.8 also has an experimental WebAssembly GC (WASM-GC) runtime, almost all of the features supported on the JavaScript runtime are also supported on the WebAssembly GC runtime, however it is still incompatible with several major browsers (especially Safari) and will not run in Chrome unless you can access the `chrome://flags` menu or request an origin trial token from Google for your website. Its based on experimental technology and may still crash sometimes, mostly due to browser bugs. Hopefully in the coming months the required feature (JSPI, WebAssembly JavaScript Promise Integration) will become enabled by default on the Chrome browser. It performs significantly better than the JavaScript client, around 50% more FPS and TPS in some cases, and will hopefully replace it someday. Just make sure you enable VSync when you play it, otherwise the game will run "too fast" and choke the browser's event loop, causing input lag.
 
 There is no GUI for compiling the WASM-GC client at the moment, you need to compile it using the `MakeWASMClientBundle` script in the development environment.
 
 ## Singleplayer
 
-EaglercraftX 1.8 fully supports singleplayer mode through an integrated server. Worlds are saved to your browser's local storage and are available even if your device does not have an internet connection. You can also import and export worlds in EaglercraftX as EPK files to copy them between devices and send them to your friends.
+Lighting Client 1.8 fully supports singleplayer mode through an integrated server. Worlds are saved to your browser's local storage and are available even if your device does not have an internet connection. You can also import and export worlds in Lighting Client as EPK files to copy them between devices and send them to your friends.
 
-You can also import and export your existing vanilla Minecraft 1.8 worlds into EaglercraftX using ZIP files if you want to try playing all your old 1.8 maps in a modern browser. The glitch that caused some chunks to become corrupt when exporting worlds as vanilla in Eaglercraft 1.5.2 no longer happens in EaglercraftX 1.8, its perfect now. Beware that the inventories of LAN world players are not saved when the world is converted to vanilla, and pets (dogs, cats, horses, etc) might sometimes forget their owners due to the UUID changes.
+You can also import and export your existing vanilla Minecraft 1.8 worlds into Lighting Client using ZIP files if you want to try playing all your old 1.8 maps in a modern browser. The glitch that caused some chunks to become corrupt when exporting worlds as vanilla in Lighting Client 1.5.2 no longer happens in Lighting Client 1.8, its perfect now. Beware that the inventories of LAN world players are not saved when the world is converted to vanilla, and pets (dogs, cats, horses, etc) might sometimes forget their owners due to the UUID changes.
 
 ## Shared Worlds
 
@@ -64,31 +64,31 @@ You can also import and export your existing vanilla Minecraft 1.8 worlds into E
 
 If you would like to invite other players to join your singleplayer world and play the game together, use the "Invite" button in the pause menu. You can configure gamemode and cheats for the other players joining your world, you can also decide if you would like to hide your world from other people on your wifi network or advertise your world to them. If hidden is "off" then other people on your same wifi network will see your world listed on their game's "Multiplayer" screen with all of their servers like how sharing LAN worlds behave in vanilla Minecraft 1.8.
 
-Once you press "Start Shared World", EaglercraftX 1.8 will give you a "join code" (usually 5 letters) to share with your friends. On a different device, go the "Multiplayer" screen and press "Direct Connect" and press "Join Shared World", enter the join code given to you when you started the shared world and press "Join World". Given a few seconds, the client should successfully be able to join your shared world from any other device on the internet that also has unrestricted internet access. If it does not work, check the "Network Settings" screen and make sure you and your friends all have the same set of shared world relay URLs configured or your clients will not be able to find each other.
+Once you press "Start Shared World", Lighting Client 1.8 will give you a "join code" (usually 5 letters) to share with your friends. On a different device, go the "Multiplayer" screen and press "Direct Connect" and press "Join Shared World", enter the join code given to you when you started the shared world and press "Join World". Given a few seconds, the client should successfully be able to join your shared world from any other device on the internet that also has unrestricted internet access. If it does not work, check the "Network Settings" screen and make sure you and your friends all have the same set of shared world relay URLs configured or your clients will not be able to find each other.
 
-If you would like to host your own relay, the JAR file and instructions can be downloaded from the "Network Settings" screen in the client. EaglercraftX 1.8 uses the same "LAN world" relay server that is used by Eaglercraft 1.5.2, however there have been several bug fixes. The current version is available in the `sp-relay/SharedWorldRelay` folder.
+If you would like to host your own relay, the JAR file and instructions can be downloaded from the "Network Settings" screen in the client. Lighting Client 1.8 uses the same "LAN world" relay server that is used by Lighting Client 1.5.2, however there have been several bug fixes. The current version is available in the `sp-relay/SharedWorldRelay` folder.
 
 ## PBR Shaders
 
-EaglercraftX 1.8 includes a deferred physically-based renderer modeled after the GTA V rendering engine with many new improvements and a novel raytracing technique for fast realistic reflections. It can be enabled in the "Shaders" menu in the game's options screen. Shader packs in EaglercraftX are just a component of resource packs, so any custom shaders you install will be in the form of a resource pack. EaglercraftX also comes with a very well optimized built-in PBR shader pack and also a built-in PBR material texture pack to give all blocks and items in the game realistic lighting and materials that looks better than most vanilla Minecraft shader packs. The default shader and texture packs were created from scratch by lax1dude, shaders packs made for vanilla Minecraft will not work in EaglercraftX and no shaders in EaglercraftX were taken from vanilla Minecraft shader packs. The shaders are not available in WebGL 1.0 mode or if floating point HDR render targets are not fully supported.
+Lighting Client 1.8 includes a deferred physically-based renderer modeled after the GTA V rendering engine with many new improvements and a novel raytracing technique for fast realistic reflections. It can be enabled in the "Shaders" menu in the game's options screen. Shader packs in Lighting Client are just a component of resource packs, so any custom shaders you install will be in the form of a resource pack. Lighting Client also comes with a very well optimized built-in PBR shader pack and also a built-in PBR material texture pack to give all blocks and items in the game realistic lighting and materials that looks better than most vanilla Minecraft shader packs. The default shader and texture packs were created from scratch by lax1dude, shaders packs made for vanilla Minecraft will not work in Lighting Client and no shaders in Lighting Client were taken from vanilla Minecraft shader packs. The shaders are not available in WebGL 1.0 mode or if floating point HDR render targets are not fully supported.
 
 ## Voice Chat
 
-EaglercraftX 1.8 includes an integrated voice-chat service that can be used in shared worlds and also on multiplayer servers when it is enabled by the server owner. This feature also uses WebRTC like shared worlds, so be careful that you don't leak your IP address accidentally by using it on a public server. If you own a website and don't want people to use voice chat on it, edit the `eaglercraftXOpts` variable in your index.html and add `allowVoiceClient: false`.
+Lighting Client 1.8 includes an integrated voice-chat service that can be used in shared worlds and also on multiplayer servers when it is enabled by the server owner. This feature also uses WebRTC like shared worlds, so be careful that you don't leak your IP address accidentally by using it on a public server. If you own a website and don't want people to use voice chat on it, edit the `eaglercraftXOpts` variable in your index.html and add `allowVoiceClient: false`.
 
 ## Resource Packs
 
-EaglercraftX 1.8 allows you to use any vanilla Minecraft 1.8 resource pack in your browser by importing it as a zip file, resource packs are saved to your browser's local storage and are saved between page refreshes. This can be used to add the original C418 soundtrack back into the game, download and import [this pack](https://bafybeiayojww5jfyzvlmtuk7l5ufkt7nlfto7mhwmzf2vs4bvsjd5ouiuq.ipfs.nftstorage.link/?filename=Music_For_Eaglercraft.zip) to add music back to Eaglercraft. A known bug with the debug desktop runtime is that sound files in resource packs do not play, this may be fixed in the future but is not a high priority issue.
+Lighting Client 1.8 allows you to use any vanilla Minecraft 1.8 resource pack in your browser by importing it as a zip file, resource packs are saved to your browser's local storage and are saved between page refreshes. This can be used to add the original C418 soundtrack back into the game, download and import [this pack](https://bafybeiayojww5jfyzvlmtuk7l5ufkt7nlfto7mhwmzf2vs4bvsjd5ouiuq.ipfs.nftstorage.link/?filename=Music_For_Eaglercraft.zip) to add music back to Lighting Client. A known bug with the debug desktop runtime is that sound files in resource packs do not play, this may be fixed in the future but is not a high priority issue.
 
 If you are creating a resource pack and want to disable the blur filter on the main menu panorama, create a file called `assets/minecraft/textures/gui/title/background/enable_blur.txt` in your pack and set it's contents to `enable_blur=0`
 
 ## Making a Server
 
-To make a server for EaglercraftX 1.8 the recommended software to use is EaglercraftXServer ("EaglerXServer"), which you can get from lax1dude here: [https://lax1dude.net/eaglerxserver/](https://lax1dude.net/eaglerxserver/)
+To make a server for Lighting Client 1.8 the recommended software to use is EaglercraftXServer ("EaglerXServer"), which you can get from lax1dude here: [https://lax1dude.net/eaglerxserver/](https://lax1dude.net/eaglerxserver/)
 
 ## Launch Options
 
-The EaglercraftX 1.8 client is configured primarily through a variable called `window.eaglercraftXOpts` that must be set before the client starts up.
+The Lighting Client 1.8 client is configured primarily through a variable called `window.eaglercraftXOpts` that must be set before the client starts up.
 
 The default eaglercraftXOpts values is this:
 
@@ -157,7 +157,7 @@ The default eaglercraftXOpts values is this:
 - `useVisualViewport:` if the game should resize some GUIs relative to `window.visualViewport` (needed on mobile browsers when the keyboard is open)
 - `deobfStackTraces:` can be used to disable the runtime stack-trace deobfuscation, reduces micro stutters if the game is logging errors
 - `disableBlobURLs:` if the game should use `data:` URLs instead of `blob:` URLs for loading certain resources
-- `eaglerNoDelay:` can be used to disable "Vigg's Algorithm", an algorithm that delays and combines multiple EaglercraftX packets together if they are sent in the same tick (does not affect regular Minecraft 1.8 packets)
+- `eaglerNoDelay:` can be used to disable "Vigg's Algorithm", an algorithm that delays and combines multiple Lighting Client packets together if they are sent in the same tick (does not affect regular Minecraft 1.8 packets)
 - `ramdiskMode:` if worlds and resource packs should be stored in RAM instead of IndexedDB
 - `singleThreadMode:` if the game should run the client and integrated server in the same context instead of creating a worker object
 - `enableEPKVersionCheck:` if the game should attempt to bypass the browser's cache and retry downloading assets.epk when its outdated
