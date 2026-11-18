@@ -5,7 +5,7 @@
 
 ![EaglercraftX 1.8 Screenshot Main Menu](https://deev.is/eagler/cors/eagler-1.8-u22-titlescreen-480p.png)
 
-### This repository contains:
+### This upstream technical documentation describes the EaglercraftX 1.8 base used by Lighting Client. Original technical identifiers and upstream project references are retained for compatibility and attribution.\n\nThis repository contains:
 
  - **Utilities to decompile Minecraft 1.8 and apply patch files to it**
  - **Source code to provide the LWJGL keyboard, mouse, and OpenGL APIs in a browser**
