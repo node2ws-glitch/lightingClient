@@ -15,11 +15,11 @@ Run the `MakeOfflineDownload` script in `target_teavm_javascript`, or run the `m
 
 ## Build the WASM-GC client
 
-Run the `MakeWASMClientBundle` script in `target_teavm_wasm_gc`, or run the `makeMainWasmClientBundle` Gradle task. This generates `assets.epw` and an offline download in `javascript_dist`. The WASM-GC runtime uses a custom TeaVM fork: https://github.com/Eaglercraft-TeaVM-Fork/eagler-teavm.
+Run the `MakeWASMClientBundle` script in `target_teavm_wasm_gc`, or run the `makeMainWasmClientBundle` Gradle task. This generates `assets.epw` and an offline download in `javascript_dist`. The WASM-GC runtime uses a [custom TeaVM fork](https://github.com/Eaglercraft-TeaVM-Fork/eagler-teavm).
 
 ## Desktop debug runtime
 
-Run `StartDesktopRuntime` in `target_lwjgl_desktop`, or the `eaglercraftDebugRuntime` Gradle task. This LWJGL runtime is intended for development and debugging, not end-user distribution. Always test the browser JavaScript/WASM builds as well.
+Run `StartDesktopRuntime` in `target_lwjgl_desktop`, or the existing desktop debug Gradle task (`eaglercraftDebugRuntime`). This LWJGL runtime is intended for development and debugging, not end-user distribution. Always test the browser JavaScript/WASM builds as well.
 
 ## Upstream project
 
