@@ -15,7 +15,7 @@ pluginManagement {
 	}
 }
 
-rootProject.name = "eaglercraft-workspace"
+rootProject.name = "lighting-client"
 
 include("target_lwjgl_desktop")
 include("target_teavm_javascript")
